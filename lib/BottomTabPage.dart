@@ -31,9 +31,8 @@ class _BottomTabPage extends State<BottomTabPage> {
         items: <BottomNavigationBarItem>[
           // textではなくて、labelにしないとダメらしい
           // aaa
-          BottomNavigationBarItem(icon: Icon(Icons.group),label: '友達!',),
-          BottomNavigationBarItem(icon: Icon(Icons.question_answer), label: 'チャット'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: '設定')
+          BottomNavigationBarItem(icon: Icon(Icons.group),label: 'Group',),
+          BottomNavigationBarItem(icon: Icon(Icons.question_answer), label: 'Chats'),
         ],
         currentIndex: _currentIndex,
         fixedColor: Colors.blueAccent,
