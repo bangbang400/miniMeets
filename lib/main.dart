@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Meets on Flutter',
-      home: LoginPage(),
+      // home: LoginPage(),
       // home: SplashPage(),
-      // home: BottomTabPage(),
+      home: BottomTabPage(),
       // routes: <String, WidgetBuilder>{
       //   '/login': (BuildContext context) => LoginPage(),
       //   '/friends': (BuildContext context) => FriendsTabPage(),

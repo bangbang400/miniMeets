@@ -7,11 +7,10 @@ import 'package:meets_on_flutter/ChatTabPage.dart';
 class GroupTabPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser;
-    final _instance = FirebaseFirestore.instance;
-    getFriendsDocData();
-    final store = _instance.collection('Users').where('name', isEqualTo: '山田太郎').get();
-    final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance.collection('Users').doc(user?.uid).collection('Friends').snapshots();
+
+    fetchUserData();
+
+    // getFriendsDocData();
 
     return Scaffold(
       appBar: AppBar(
@@ -19,7 +18,7 @@ class GroupTabPage extends StatelessWidget {
       ),
       body: Container(
         child: StreamBuilder<QuerySnapshot>(
-          stream: _usersStream,
+          // stream: _usersStream,
           builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.hasError) {
               return Text('FireStore接続エラー');
@@ -48,6 +47,15 @@ class GroupTabPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+fetchUserData() async {
+  final _firebaseAuth = FirebaseAuth.instance;
+  final _fireStore = FirebaseFirestore.instance;
+  final userId = _firebaseAuth.currentUser?.uid;
+  if(userId != null){
+    // DocumentSnapshot snapshot = await _fireStore.doc('Users')
   }
 }
 
