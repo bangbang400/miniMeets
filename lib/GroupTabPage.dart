@@ -21,7 +21,7 @@ class GroupTabPage extends StatelessWidget {
           // stream: _usersStream,
           builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.hasError) {
-              return Text('FireStore接続エラー');
+              return Text('FireStore接続エラー ');
             }
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Text("Loading");
