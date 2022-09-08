@@ -29,8 +29,6 @@ class _BottomTabPage extends State<BottomTabPage> {
       body: _pageWidgets.elementAt(_currentIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
-          // textではなくて、labelにしないとダメらしい
-          // aaa
           BottomNavigationBarItem(icon: Icon(Icons.group),label: 'Group',),
           BottomNavigationBarItem(icon: Icon(Icons.question_answer), label: 'Chats'),
         ],
