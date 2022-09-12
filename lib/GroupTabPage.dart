@@ -13,8 +13,25 @@ class GroupTabPage extends StatelessWidget {
       title: 'Group',
       home: ChangeNotifierProvider<MainModel>(
         create: (_) => MainModel()..fetchUsers(),
-
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('User一覧'),
+          ),
+          body: Consumer<MainModel>(
+            builder: (context, model, child) {
+              final users = model.users;
+              return ListView.builder(
+                itemCount: users.length,
+                itemBuilder: (context, index){
+                  return ListTile(
+                    title: Text(users[index].user_Name),
+                  );
+                },
+              );
+            },
+          ),
+        ),
       ),
-    )
+    );
   }
 }
